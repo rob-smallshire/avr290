@@ -94,8 +94,7 @@ int main(void)
     count1++;
     
 #if LED_DEMO_ON
-   LED_DATA = ~count1;  // Use PORTA to display count1 data     
-    //delay100ms(30);             // two seconds delay
+   LED_DATA = ~count1;  // Use PORTA to display count1 data
         _delay_ms(1000);
 #endif
     }
@@ -118,22 +117,6 @@ void init_demo(void){
   LED_OUT_CTRL = 0x7f;  //PA7 is SCL on tiny20/tiny40 AVR
 #endif
 }
-
-/*!  \brief  delay100ms() delay generator
- *
- *   Input: the number of 100 msec delays desired
- *   Example: a delay100ms(10) would generate a delay of 1000 msec = 1 second
- * 
- */
-void delay100ms(unsigned char count){
-	unsigned int delay_counter = 1;
-	while (count > 0){		
-	  delay_counter = DELAY_VAL_100_MS;
-	  while (delay_counter > 0) delay_counter++;
-	  count--;
-	  }
-}
-
 
 /*!  \brief  TWI slave twi_data_to_master driver callback function
  * 
