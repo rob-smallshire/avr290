@@ -43,7 +43,7 @@
 * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *****************************************************************************/
 
-#include <iotiny20.h>
+#include <avr/io.h>
 #include "drvr.h"
 
 
