@@ -45,7 +45,7 @@ include(generic-gcc-avr.cmake)
 ##########################################################################
 # name your project
 ##########################################################################
-project(t20slave)
+project(avr290)
 
 ##########################################################################
 # status messages
@@ -139,7 +139,7 @@ add_definitions("-c")
 ##########################################################################
 # include search paths
 ##########################################################################
-#include_directories(${t20slave_SOURCE_DIR}/mylib)
+#include_directories(${avr290_SOURCE_DIR}/mylib)
 
 ##########################################################################
 # building library and application in their subdirectories
@@ -148,8 +148,9 @@ add_definitions("-c")
 #add_subdirectory(app)
 
 add_avr_executable(
-        t20slave
+        avr290
         main.c
+        drvr.c
 )
 
 # find_library(M_LIB m)
@@ -158,7 +159,7 @@ add_avr_executable(
 #find_library(C_LIB c)
 #message(STATUS "avr-libc: ${C_LIB}")
 
-#avr_target_link_libraries(t20slave ${C_LIB})
+#avr_target_link_libraries(avr290 ${C_LIB})
 
 ##########################################################################
 # testing functions w/o source files - gets FATAL_ERROR
