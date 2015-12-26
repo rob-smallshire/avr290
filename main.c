@@ -44,6 +44,10 @@
 *****************************************************************************/
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
+
+#include <util/delay.h>
+
 #include "drvr.h"
 
 
@@ -77,7 +81,7 @@ int main(void)
   twi_slave_initialise();
   
   /* Enable interrupts. */
-  __enable_interrupt();
+  sei();
   
 
 /*! /brief example code
@@ -91,7 +95,8 @@ int main(void)
     
 #if LED_DEMO_ON
    LED_DATA = ~count1;  // Use PORTA to display count1 data     
-    delay100ms(30);             // two seconds delay  
+    //delay100ms(30);             // two seconds delay
+        _delay_ms(1000);
 #endif
     }
 
@@ -106,7 +111,7 @@ int main(void)
 void init_demo(void){
 
     /* Clear CLKPSR bits to get AVR to run at 8 MHz  */
-  CCP = 0xD8; // wite access signature to Configuration Change Protection Register
+  CCP = 0xD8; // write access signature to Configuration Change Protection Register
   CLKPSR = 0;  // This should change clock from 1 MHz default to 8 MHz
   
 #if LED_DEMO_ON
