@@ -48,6 +48,8 @@
  * include files
 ****************************************************************************/
 #include <avr/io.h>
+#include <avr/interrupt.h>
+
 #include "drvr.h"
 
                         
@@ -92,8 +94,7 @@ void twi_slave_initialise(void){
  *Asserts ACK, holds clock low until execution of a write to TWI_SLAVE_CTRLB register
  *
 ****************************************************************************/
-#pragma vector=TWI_SLAVE_vect
-__interrupt void TWI_ISR(void)
+ISR(TWI_SLAVE_vect)
 {
         uint8_t status = TWI_SLAVE_STATUS & 0xC0;
        

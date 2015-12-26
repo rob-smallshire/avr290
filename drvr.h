@@ -47,9 +47,7 @@
  * include files
 ****************************************************************************/
 
-#include <iotiny20.h>
-#include <stdint.h>            
-#include <inavr.h>
+#include <stdint.h>
 
 /*!TWI Address */
 #define TWI_ADDR                          0x20 //0xA0
