@@ -44,7 +44,7 @@
 *****************************************************************************/
 
 #include <iotiny20.h>
-#include "twi-no_stretch-tiny20-drvr.h"
+#include "drvr.h"
 
 
 /* Prototypes here */
@@ -153,7 +153,7 @@ unsigned char twi_data_to_master(void){
  *   This is an example of a command-specific response logic
  *   to demonstrate how the TWI driver can send a command from teh TWI master
  *    to the slave code's application
- *   Input:  data from master to slave then to user’s code
+ *   Input:  data from master to slave then to userï¿½s code
  *   
  *   Output: User code receives new data via the function returning a value
  *  

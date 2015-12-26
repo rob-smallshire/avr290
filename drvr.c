@@ -48,7 +48,7 @@
  * include files
 ****************************************************************************/
 #include <iotiny20.h>
-#include "twi-no_stretch-tiny20-drvr.h"
+#include "drvr.h"
 
                         
 /* General TWI Master staus codes */                      
